@@ -25,7 +25,7 @@ def save_data(msg):
 
 def send_message(ws, msg_dict):
 	data = json.dumps(msg_dict).encode()
-	logger.debug("发送消息:" + str(msg_dict))
+	print("发送消息:" + str(msg_dict))
 	ws.send(data)
 
 
@@ -42,7 +42,7 @@ def on_message(ws, message):
     	logger.debug("收到订阅状态消息：" + str(msg_dict))
     else:
     	save_data(msg_dict)
-    	logger.debug("收到消息: " + str(msg_dict))
+    	print("收到消息: " + str(msg_dict))
     	k_line_service.handle_raw_message(msg_dict)
 
 
@@ -63,7 +63,6 @@ def on_open(ws):
 			"sub": subscribe,
 			"id": currency
 		}
-		print("done");
 		# 订阅K线图
 		send_message(ws, data)
 
