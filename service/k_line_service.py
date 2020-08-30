@@ -6,6 +6,7 @@ import datetime
 import http.client
 import statistics
 from collections import deque
+from config import settings
 
 logger = logging.getLogger()
 
