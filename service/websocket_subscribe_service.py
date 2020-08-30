@@ -30,7 +30,6 @@ def send_message(ws, msg_dict):
 
 
 def on_message(ws, message):
-    print("here done")
     unzipped_data = gzip.decompress(message).decode()
     msg_dict = json.loads(unzipped_data)
     if 'ping' in msg_dict:
@@ -44,7 +43,7 @@ def on_message(ws, message):
     else:
     	save_data(msg_dict)
     	logger.debug("收到消息: " + str(msg_dict))
-    	kline_handler.handle_raw_message(msg_dict)
+    	k_line_service.handle_raw_message(msg_dict)
 
 
 def on_error(ws, error):
