@@ -6,7 +6,7 @@ import logging
 from copy import deepcopy
 
 # 此处填写APIKEY
-ACCESS_KEY = "426f55aa-3d2xc4v5bu-1eb54946-2e38a"
+ACCESS_KEY = ""
 SECRET_KEY = " "
 
 # 用户ID(火币网个人中心可看)
